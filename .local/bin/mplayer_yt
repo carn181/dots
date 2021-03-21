@@ -1,0 +1,4 @@
+#!/bin/zsh
+data=$(youtube-dl -f "bestvideo[height<=480]+(bestaudio[acodec=opus]/bestaudio[acodec=vorbis]/bestaudio[acodec=aac]/bestaudio)/best" -g $1)
+[ $(echo -e $data | wc -l) = 2 ] && mplayer -vo fbdev2 -ao sdl -zoom -x 1280 -y 720 "$(echo $data | head -n1)" -audiofile "$(echo $data | tail -n1)" -cache 8192 && exit 1
+mplayer -vo fbdev2 -ao sdl -zoom -x 1280 -y 720 $data

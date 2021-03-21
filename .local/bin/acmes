@@ -1,0 +1,3 @@
+#!/bin/sh
+pidof fontsrv || fontsrv &
+acme -f /mnt/font/'DejaVuSansMono'/11a/font

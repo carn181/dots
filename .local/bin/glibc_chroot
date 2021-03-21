@@ -1,0 +1,4 @@
+#!/bin/sh
+CHROOT_DIR="/home/ecm/chroots/void"
+xhost + > /dev/null
+doas chroot $CHROOT_DIR /bin/su - ecm 

@@ -1,0 +1,8 @@
+#!/bin/sh
+folder="$HOME/ext/Media/Pix/screenies"
+name=$(date +%Y%m%d_%H%M%S).png
+path=$folder/$name
+case "$1" in
+  "-s") maim -s $path ;;
+  "") maim $path ;;
+esac

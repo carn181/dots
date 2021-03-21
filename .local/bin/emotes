@@ -1,0 +1,6 @@
+#!/bin/sh
+emote="$(cut -d' ' -f2 ~/.cache/emotes| dmenu -l 10)"
+link=$(grep -e $emote ~/.cache/emotes | cut -d' ' -f1 | tr -d '\n')
+wget $link -O '/tmp/a' 2>/dev/null
+printf $link | xclip -selection clipboard
+notify-send --expire-time=750 --icon="/tmp/a" "$emote has been copied"

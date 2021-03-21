@@ -1,0 +1,10 @@
+#!/bin/sh
+while read file
+do
+	case "$1" in
+	"w") 
+		wpg -a "$(pwd)/$file" && wpg -s "$(pwd)/$file" ;;
+	"x") 
+    xwallpaper --stretch "$(pwd)/$file" ;;
+	esac
+done

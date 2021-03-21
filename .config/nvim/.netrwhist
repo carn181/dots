@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/ecm/.local/share/ql/dists/quicklisp/software/croatoan-20210124-git/ansi'
+let g:netrw_dirhist_3='/home/ecm/.config'
+let g:netrw_dirhist_2='/home/ecm/.local/share/ql/dists/quicklisp/software/croatoan-20201220-git'
+let g:netrw_dirhist_1='/home/ecm/.git'

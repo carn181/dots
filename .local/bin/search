@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+w3m_search(){
+    xterm -e sr -browser=w3m duckduckgo $(printf "" | dmenu -p 'SEARCH:')
+}
+
+bookmark_open(){
+    librewolf $(grep -e $(cut -d' ' -f1 < ~/.config/qutebrowser/quickmarks | dmenu) ~/.config/qutebrowser/quickmarks | cut -d' ' -f2)
+}
+
+case $(printf "bookmark\nw3m\nyt" | dmenu -p "search:") in
+    bookmark)bookmark_open;;
+    w3m)w3m_search;;
+    yt)yt -D;;
+esac

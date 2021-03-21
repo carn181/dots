@@ -1,0 +1,3 @@
+#!/bin/sh 
+
+eval $(printf "Shutdown\nReboot\nLock" | dmenu -l 3 | sed 's/Reboot/doas reboot/g;s/Shutdown/ doas poweroff/g;s/Lock/ betterlockscreen -l dimblur -t "Hello Human"/g')

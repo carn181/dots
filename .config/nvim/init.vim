@@ -1,0 +1,9 @@
+source ~/.config/nvim/modules/settings.vim
+source ~/.config/nvim/modules/netrw.vim
+source ~/.config/nvim/modules/plugins.vim
+source ~/.config/nvim/modules/colorscheme.vim
+source ~/.config/nvim/modules/deoplete.vim
+source ~/.config/nvim/modules/vimwiki.vim
+source ~/.config/nvim/modules/keybinds.vim
+source ~/.config/nvim/modules/ft.vim
+source ~/.config/nvim/modules/dict.vim

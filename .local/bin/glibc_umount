@@ -1,0 +1,11 @@
+#!/bin/sh
+CHROOT_DIR="/home/ecm/chroots/void"
+doas umount $CHROOT_DIR/home/ecm/hom
+doas umount $CHROOT_DIR/run
+doas umount $CHROOT_DIR/var/run
+doas umount  $CHROOT_DIR/tmp
+doas umount  $CHROOT_DIR/dev/shm
+doas umount  $CHROOT_DIR/dev/pts
+doas umount  $CHROOT_DIR/dev
+doas umount  $CHROOT_DIR/sys
+doas umount  $CHROOT_DIR/proc

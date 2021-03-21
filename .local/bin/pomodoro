@@ -1,0 +1,39 @@
+#!/bin/zsh
+
+timer(){
+  t=$(($1*60))
+  while [ $t != 0 ]; do
+    clear
+    printf "%s:%s\n" $(($t/60)) $(($t%60))
+    t=$((t-1))
+    sleep 1s
+  done
+}
+
+while true
+do
+  timec=0
+  printf "\x1b[1mWhat do you want to do?\x1b[0m\n"
+  read task
+  clear
+  rfkill block wlan
+  printf "\x1b[1mYou will be doing the task \"${task}\" for 25 minutes. Good Luck\n"
+  setsid mpv ~/.cache/start.wav 1&>/dev/null
+  sleep 2s
+  timer 25
+  if [ $timec -eq 3 ]; then
+    timec=0
+    printf "\x1b[1mTake a 10 minute break now. You did a good job.\x1b[0m\n"
+    notify-send "Take a 10 minute break"
+    rfkill unblock wlan
+    setsid mpv ~/.cache/celebrate.wav 1&>/dev/null
+    timer 10
+  else
+    timec=$((timec++))
+    printf "\x1b[1mTake a 5 minute break now. You did a good job.\x1b[0m\n"
+    notify-send "Take a 5 minute break"
+    rfkill unblock wlan
+    setsid mpv ~/.cache/celebrate.wav 1&>/dev/null
+    timer 5
+  fi 
+done

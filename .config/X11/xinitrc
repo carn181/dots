@@ -1,0 +1,33 @@
+#!/bin/sh 
+export XDG_SESSION_TYPE=x11
+case "$1" in 
+    dwm)
+	[ -f ~/.config/X11/xprofile ] && . ~/.config/X11/xprofile
+	setsid emacs --daemon &
+	exec dbus-launch --sh-syntax --exit-with-session ~/.local/bin/startdwm;;
+    sowm)	
+	[ -f ~/.config/X11/xprofile ] && . ~/.config/X11/xprofile
+	while :; do
+	    ssh-agent sowm || break
+	done;;
+    2bwm)	
+	[ -f ~/.config/X11/xprofile ] && . ~/.config/X11/xprofile
+	~/.local/bin/bar/echobar | lemonbar -p &
+	while :; do
+	    exec 2bwm || break
+	done;;
+    9)	
+	#		[ -f ~/.config/X11/xprofile ] && . ~/.config/X11/xprofile
+	#		. ~/.config/X11/wmii
+	while :; do
+	    exec rio || break
+	done;;
+	xfce)   exec startxfce4;;
+	rp)   exec ratpoison;;
+	stmp)   exec stumpwm;;
+	emacs)	[ -f ~/.config/X11/xprofile ] && . ~/.config/X11/xprofile
+		exec dbus-launch --exit-with-session emacs;;
+	xmonad) [ -f ~/.config/X11/xprofile ] && . ~/.config/X11/xprofile
+		exec xmonad;;
+	dwl) exec dwl;;
+esac

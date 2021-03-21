@@ -1,0 +1,4 @@
+#!/bin/sh
+status=$(cmus-remote -Q | head -n1)
+[ "$status" = "status paused" ] && cmus-remote -p 
+[ "$status" = "status playing" ] && cmus-remote -u

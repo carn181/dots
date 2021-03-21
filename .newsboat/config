@@ -1,0 +1,27 @@
+color background        white    default
+color listnormal        color244 default
+color listfocus         default  red
+color listnormal_unread white    default
+color listfocus_unread  default  red
+color info              black    yellow
+color article           white    default
+
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key d pagedown
+bind-key u pageup
+
+auto-reload yes
+
+notify-always yes
+notify-program "/usr/bin/notify-send"
+notify-format "%d new articles (%n unread articles, %f unread feeds)"
+
+browser "/usr/bin/w3m %u"
+
+macro f set browser "/usr/bin/qutebrowser %u"; open-in-browser ; set browser "/usr/bin/w3m %u"
+macro m set browser "mpv -ao=alsa --ytdl-format=`bestvideo[height<=480]+(bestaudio[acodec=opus]/bestaudio[acodec=vorbis]/bestaudio[acodec=aac]/bestaudio)/best` %u" ; open-in-browser ; set browser "w3m %u"
+macro d set browser "mpv -vo=drm -ao=alsa --ytdl-format=`bestvideo[height<=480]+(bestaudio[acodec=opus]/bestaudio[acodec=vorbis]/bestaudio[acodec=aac]/bestaudio)/best` %u" ; open-in-browser ; set browser "w3m %u"
+macro c set browser "mplayer_yt %u" ; open-in-browser ; set browser "w3m %u"

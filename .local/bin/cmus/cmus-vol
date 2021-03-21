@@ -1,0 +1,5 @@
+#!/bin/sh
+case "$1" in 
+  u) cmus-remote -v +5;;
+  d) cmus-remote -v -5%;;
+esac

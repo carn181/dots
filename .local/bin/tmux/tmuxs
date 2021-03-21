@@ -1,0 +1,3 @@
+#!/bin/zsh
+status &
+tmux && pkill -x status

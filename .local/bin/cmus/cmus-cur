@@ -1,0 +1,3 @@
+#!/bin/zsh
+dat=$(cmus-remote -Q)
+printf "%s - %s\n" "$(echo $dat | grep 'title' | sed 's/tag title //g')" "$(cmus-remote -Q | grep ' artist' | sed 's/tag artist //g')"

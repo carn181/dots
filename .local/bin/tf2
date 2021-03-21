@@ -1,0 +1,3 @@
+#!/bin/sh
+notify-send "Starting TF2"
+steam steam://rungameid/440

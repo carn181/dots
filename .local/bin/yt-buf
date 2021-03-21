@@ -1,0 +1,4 @@
+#!/bin/sh
+VIDEOS_DIR="$HOME/ext/Media/Vids/YT/$(date +%Y-%m-%d)/"
+mkdir -p $VIDEOS_DIR
+youtube-dl -f "bestvideo[height<=480]+(bestaudio[acodec=opus]/bestaudio[acodec=vorbis]/bestaudio[acodec=aac]/bestaudio)/best" -o "$VIDEOS_DIR/%(title)s.%(ext)s" --write-auto-sub --embed-sub $1

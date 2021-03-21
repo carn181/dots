@@ -1,0 +1,5 @@
+#!/bin/zsh
+while true :; do
+  tmux set -g status-right "$(date "+%b %d, %a %I:%M") $(cmus-cur)"
+  sleep 5s
+done

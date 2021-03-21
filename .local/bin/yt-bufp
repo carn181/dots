@@ -1,0 +1,2 @@
+#!/bin/sh
+mpv ~/ext/Media/Vids/YT/$(date +%Y-%m-%d)/*

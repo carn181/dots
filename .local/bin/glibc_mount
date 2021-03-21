@@ -1,0 +1,14 @@
+#!/bin/sh
+CHROOT_DIR="/home/ecm/chroots/void/"
+doas cp /etc/hosts $CHROOT_DIR/etc
+doas cp /etc/resolv.conf $CHROOT_DIR/etc
+doas mount --bind /proc $CHROOT_DIR/proc
+doas mount --bind /sys $CHROOT_DIR/sys
+doas mount --bind /dev $CHROOT_DIR/dev
+doas mount --bind /dev/pts $CHROOT_DIR/dev/pts
+doas mount --bind /dev/shm $CHROOT_DIR/dev/shm
+doas mount --bind /tmp $CHROOT_DIR/tmp
+doas mount --bind /var/run $CHROOT_DIR/var/run
+doas mount --bind /run $CHROOT_DIR/run
+doas mount --bind /home/ecm $CHROOT_DIR/home/ecm/hom
+xhost +

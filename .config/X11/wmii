@@ -1,0 +1,10 @@
+#!/bin/zsh
+source ~/.cache/wal/colors.sh
+wmiir write /ctl <<!
+"bar on top"
+"normcolors $foreground $background $foreground"
+"focuscolors $background $foreground $background"
+"font xft:Monospace:size=8"
+!
+wmiir xwrite /lbar/1 $foreground $background $foreground 1
+wmiir xwrite /lbar/2 $background $foreground $background 2
