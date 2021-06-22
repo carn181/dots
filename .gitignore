@@ -76,7 +76,7 @@
 !/.config/emacs/start.png
 !/.config/emacs/local/
 !/.config/emacs/modules/
-/.config/emacs/modules/*/*.elc
+/.config/emacs/modules/*.el
 !/.config/emacs/elfeed.org
 !/.config/emacs/init.el
 

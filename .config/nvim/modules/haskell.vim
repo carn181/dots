@@ -16,3 +16,6 @@ let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 let g:haskell_indent_guard = 2
 let g:haskell_indent_case_alternative = 1
+
+let g:hindent_on_save = 1
+let g:hindent_indent_size = 2

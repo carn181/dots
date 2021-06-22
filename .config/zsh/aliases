@@ -28,3 +28,4 @@ alias cl="sbcl --noinform"
 alias dots="git --git-dir=$HOME/git/dots --work-tree=$HOME"
 alias netstop="doas rfkill block wlan"
 alias netstart="doas rfkill unblock wlan"
+alias nheko='QT_QPA_PLATFORMTHEME="" nheko'

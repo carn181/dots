@@ -1,1 +1,1 @@
-colorscheme desert
+colorscheme modus-vivendi

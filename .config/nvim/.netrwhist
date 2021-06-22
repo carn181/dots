@@ -1,6 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/ecm/git/proton-bridge/cmd/Desktop-Bridge/deploy'
+let g:netrw_dirhist_1='/home/ecm/git/proton-bridge/cmd/Desktop-Bridge/deploy/linux'
+let g:netrw_dirhist_0='/home/ecm/ext/Coding/rust'
+let g:netrw_dirhist_9='/home/ecm/ext/Coding/rust/hello-rust/src'
+let g:netrw_dirhist_8='/home/ecm/ext/Coding/rust/hello-rust'
+let g:netrw_dirhist_7='/home/ecm/ext/Coding/rust'
+let g:netrw_dirhist_6='/home/ecm/.git'
+let g:netrw_dirhist_5='/home/ecm/.local/share/ql/dists/quicklisp/software/mcclim-20210124-git/Core/clim-core'
 let g:netrw_dirhist_4='/home/ecm/.local/share/ql/dists/quicklisp/software/croatoan-20210124-git/ansi'
 let g:netrw_dirhist_3='/home/ecm/.config'
-let g:netrw_dirhist_2='/home/ecm/.local/share/ql/dists/quicklisp/software/croatoan-20201220-git'
-let g:netrw_dirhist_1='/home/ecm/.git'

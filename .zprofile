@@ -5,7 +5,7 @@ export SHELL="zsh"
 export OPENER="xdg-open"
 export WM="dwm"
 export COLORTERM="truecolor"
-export BROWSER="qutebrowser"
+export BROWSER="librewolf"
 export TERMINAL="st-meta-256color"
 export READER="zathura"
 export VISUAL="nvim"
@@ -37,7 +37,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 #export QT_QPA_FB_DRM=1
 #export QT_QPA_PLATFORM="linuxfb:fb=/dev/fb0:tty=/dev/tty2"
 #export GTK2_RC_FILES="/usr/share/themes/gruvbox-gtk/gtk-2.0/gtkrc"
-export GTK2_RC_FILES="/usr/share/themes/Nordic-darker/gtk-2.0/gtkrc"
+export GTK2_RC_FILES="/usr/share/themes/Kripton/gtk-2.0/gtkrc"
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export WMII_TERM="st"
 export LESS_TERMCAP_mb=$'\e[1;32m'

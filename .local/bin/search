@@ -5,7 +5,7 @@ w3m_search(){
 }
 
 bookmark_open(){
-    librewolf $(grep -e $(cut -d' ' -f1 < ~/.config/qutebrowser/quickmarks | dmenu) ~/.config/qutebrowser/quickmarks | cut -d' ' -f2)
+    $BROWSER $(grep -e $(cut -d' ' -f1 < ~/.config/qutebrowser/quickmarks | dmenu) ~/.config/qutebrowser/quickmarks | cut -d' ' -f2)
 }
 
 case $(printf "bookmark\nw3m\nyt" | dmenu -p "search:") in

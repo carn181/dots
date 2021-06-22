@@ -1,33 +1,34 @@
-#!/bin/sh 
+ #!/bin/sh
 export XDG_SESSION_TYPE=x11
-case "$1" in 
-    dwm)
-	[ -f ~/.config/X11/xprofile ] && . ~/.config/X11/xprofile
-	setsid emacs --daemon &
-	exec dbus-launch --sh-syntax --exit-with-session ~/.local/bin/startdwm;;
-    sowm)	
-	[ -f ~/.config/X11/xprofile ] && . ~/.config/X11/xprofile
-	while :; do
-	    ssh-agent sowm || break
-	done;;
-    2bwm)	
-	[ -f ~/.config/X11/xprofile ] && . ~/.config/X11/xprofile
-	~/.local/bin/bar/echobar | lemonbar -p &
-	while :; do
-	    exec 2bwm || break
-	done;;
-    9)	
-	#		[ -f ~/.config/X11/xprofile ] && . ~/.config/X11/xprofile
-	#		. ~/.config/X11/wmii
-	while :; do
-	    exec rio || break
-	done;;
-	xfce)   exec startxfce4;;
-	rp)   exec ratpoison;;
-	stmp)   exec stumpwm;;
-	emacs)	[ -f ~/.config/X11/xprofile ] && . ~/.config/X11/xprofile
-		exec dbus-launch --exit-with-session emacs;;
-	xmonad) [ -f ~/.config/X11/xprofile ] && . ~/.config/X11/xprofile
-		exec xmonad;;
-	dwl) exec dwl;;
-esac
+source_xprofile(){
+    [ -f ~/.config/X11/xprofile ] && . ~/.config/X11/xprofile
+}
+ case "$1" in
+     dwm)    source_xprofile
+             setsid emacs --daemon &
+             exec dbus-launch --sh-syntax --exit-with-session ~/.local/bin/startdwm;;
+     sowm)   source_xprofile
+             while :; do
+                 ssh-agent sowm || break
+             done;;
+     2bwm)   source_xprofile
+             ~/.local/bin/bar/echobar | lemonbar -p &
+             while :; do
+                 exec 2bwm || break
+             done;;
+     9)      while :; do
+                 exec rio || break
+             done;;
+     xfce)   exec startxfce4;;
+     rp)     exec ratpoison;;
+     stmp)   source_xprofile
+             exec dbus-launch --exit-with-session stumpwm;;
+     emacs)  source_xprofile
+                exec dbus-launch --exit-with-session emacs;;
+     xmonad) source_xprofile
+             exec xmonad;;
+     cwm)    source_xprofile
+             exec cwm;;
+     dwl)    exec dwl;;
+ esac
+ 

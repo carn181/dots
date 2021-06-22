@@ -7,3 +7,4 @@ source ~/.config/nvim/modules/vimwiki.vim
 source ~/.config/nvim/modules/keybinds.vim
 source ~/.config/nvim/modules/ft.vim
 source ~/.config/nvim/modules/dict.vim
+source ~/.config/nvim/modules/ale.vim
