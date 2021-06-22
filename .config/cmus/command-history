@@ -1,6 +1,0 @@
-pl-create Classical
-pl-create Vapourwave
-set output_plugin=alsa
-set color_win_attr
-set mpris=true
-colorscheme gruvbox

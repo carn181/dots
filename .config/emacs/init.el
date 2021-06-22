@@ -20,6 +20,9 @@
 ;; No tabs
 (setq-default indent-tabs-mode nil)
 
+;; Global HL Line
+(global-hl-line-mode 1)
+
 ;; Font
 (set-face-attribute 'default nil :font "Iosevka Nerd Font Mono" :height 105)
 
@@ -128,3 +131,9 @@
 
 ;; Magit
 (use-package  magit)
+
+;; Org Bullets
+(use-package org-bullets
+  :hook ('org-mode-hook 
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
