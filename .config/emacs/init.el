@@ -83,7 +83,7 @@
 
 ;; Company
 (use-package company
-  :hook ((emacs-lisp-mode org-mode-hook lisp-mode-hook common-lisp-mode ielm-mode-hook eshell-mode) . company-mode)
+  :hook ((emacs-lisp-mode org-mode-hook lisp-mode-hook common-lisp-mode ielm-mode-hook eshell-mode sly-mode-hook) . company-mode)
   :config
   (setq company-idle-delay 0.1
         company-minimum-prefix-length 1))
