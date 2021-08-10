@@ -1,7 +1,7 @@
 [Default Applications]
 application/pdf=emacsclient.desktop
-application/epub=epy.desktop
-application/epub+zip=epy.desktop
+application/epub=emacsclient.desktop
+application/epub+zip=emacsclient.desktop
 image/png=sxiv.desktop
 video/x-matroska=mpv.desktop
 x-scheme-handler/msteams=teams.desktop

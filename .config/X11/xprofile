@@ -1,5 +1,5 @@
 #!/bin/sh
-xrdb ~/.local/share/xresources/modus &
+xrdb ~/.local/share/xresources/gruvbox &
 xset r rate 300 50 &
 slstatus &
 xbanish &
@@ -9,6 +9,6 @@ setxkbmap -layout us -option ctrl:nocaps &
 pidof jackd || jackd -d alsa &
 pidof pulseaudio || pulseaudio -D &
 #xsetroot -solid "#1d2021" &
-xwallpaper --focus ~/ext/Media/Pix/wallpapers/modus.jpg &
+xwallpaper --focus ~/ext/Media/Pix/wallpapers/gruv.jpg &
 pidof mpd || mpd &
-redshift &
+#redshift &
