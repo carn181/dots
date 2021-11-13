@@ -2,10 +2,11 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'dense-analysis/ale'
 Plug 'vlime/vlime'
-Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
 Plug 'tjdevries/colorbuddy.nvim'
 Plug 'ishan9299/modus-theme-vim', {'branch': 'stable'} 
 Plug 'RRethy/vim-hexokinase'
+Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'junegunn/fzf'
 Plug 'vimwiki/vimwiki'
 Plug 'spolu/dwm.vim'

@@ -32,7 +32,7 @@ lyrics_directory = ~/.config/ncmpcpp/.lyrics
 ##
 mpd_music_dir = ~/ext/Media/Music
 #
-#mpd_crossfade_time = 5
+mpd_crossfade_time = 5
 #
 ##### music visualizer #####
 ##

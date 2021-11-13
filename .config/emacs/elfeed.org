@@ -1,0 +1,41 @@
+* Elfeed                                                             :elfeed:
+** Videos                                                            :videos:
+*** Youtube                                                         :youtube:
+**** Tech                                                              :tech:
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA][Mental Outlaw]]
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCJetJ7nDNLlEzDLXv7KIo0w][Gavin Freeborn]]
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA][Brodie Robertson]]
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCKTehwyGCKF-b2wo0RKwrcg][Bisqwit]]
+**** Gaming                                                          :gaming:
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCT1mF-u0Lcf7bYuUWTvDcpw][RADAL]]
+**** Memes                                                            :memes:
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=UC5P4Sjy7IT3L1XFA7Zp_aHQ][CoreyLaddo]]
+**** Art                                                                :art:
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCUQTqWAaSzhAKRanOpes1nA][Sinix Design]]
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCsDxB-CSMQ0Vu_hTag7-2UQ][Marco Bucci]]
+**** Politics                                                      :politics:
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCDoiJEufoWOzn4G6iiKHI9w][The Prudentialist]]                                        
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCdHT7KB1gDAXZYpPW71fn0Q][The Distributist]]                                         
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=0UC7BRAd6W3wx1ySm7VjhIBbg][Auron Macintyre]]                                          
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=UC4W0613PdnkBupKL4Ywjf9w][Mr. Patriarch]]                                            
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCrD0cRlN2nSFj9PVIaZ3o4w][Charlemagne]]                                              
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=UC948k1bkupzIdl_YcOTeAeg][The Prosecutor]]                                           
+**** Christianity                                                 :christian:   
+***** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCaMmTDOIoCnEywuR4attUGA][Brian Holdsworth]]                                          
+***** Lutheran                                                     :lutheran:
+****** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCQztlwsK5pV45U8vMtfbWjg][Dr. Jordan B Cooper]]                                        
+****** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCPCSuCbAv-7iZ-IIKD2Gqeg][Bryan Wolfmueller]]                                          
+****** [[https://www.youtube.com/feeds/videos.xml?channel_id=UCQAo-YKgCaDp3SYVTDLU_Yg][Ask the Pastor]]                                             
+***** [[https://youtube.com/feeds/videos.xml?channel_id=UCgS5-yaBlUoe31n4izaMo8g][Mar Thoma Syrian Church]]                                     
+***** [[https://youtube.com/feeds/videos.xml?channel_id=UCQ5DQ8zCOmeAqOcKTbSb7fg][Disputed Questions]]                                          
+***** [[https://youtube.com/feeds/videso.xml?channel_id=UCc9i77qgn4y1yTat-LgjLMg][New Kingdom Media]]                                           
+*** Peertube
+**** [[https://videos.lukesmith.xyz/feeds/videos.xml][Luke Smith]]                                                      :videos:
+** Blog                                                                :blog:
+*** [[https://tentsofshem.wordpress.com/?feed=rss2][Jacob Aitken]]                                               
+*** [[https://northamanglican.com/feed/atom/][North American Anglican]]                                    
+*** [[https://lukesmith.xyz/rss.xml][Luke Smith]]                                                 
+*** [[https://revfisk.com/feed][Revfiskj]]                                                   
+*** [[https://www.chroniclesmagazine.org/assets/rss/email-rss-Chronicles.xml][Chronicles]]                                                     :articles:
+** Podcasts                                                        :podcasts:
+*** [[https://notrelated.xyz/rss][Not Related]]

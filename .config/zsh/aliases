@@ -21,7 +21,7 @@ alias xi="doas xbps-install"
 alias xq="xbps-query"
 alias xr="doas xbps-remove"
 alias smi="doas make install"
-alias mpv="mpv -ao=jack --audio-channels=2"
+alias mpv="mpv -ao=pulse --audio-channels=2"
 alias sudo="doas"
 alias gc="git clone"
 alias cl="sbcl --noinform"
@@ -29,3 +29,5 @@ alias dots="git --git-dir=$HOME/git/dots --work-tree=$HOME"
 alias netstop="doas rfkill block wlan"
 alias netstart="doas rfkill unblock wlan"
 alias nheko='QT_QPA_PLATFORMTHEME="" nheko'
+alias goicy='goicy ~/.config/goicy.ini'
+alias lock='betterlockscreen -l blur'

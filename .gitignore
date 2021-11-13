@@ -46,6 +46,10 @@
 /.config/*
 !/.config/mimeapps.list
 
+!/.config/alsa
+/.config/alsa/*
+!/.config/alsa/asoundrc
+
 !/.config/qutebrowser
 /.config/qutebrowser/*
 !/.config/qutebrowser/config.py

@@ -23,17 +23,17 @@ do
   timer 25
   if [ $timec -eq 3 ]; then
     timec=0
-    printf "\x1b[1mTake a 10 minute break now. You did a good job.\x1b[0m\n"
-    notify-send "Take a 10 minute break"
-    rfkill unblock wlan
-    setsid mpv ~/.cache/celebrate.wav 1&>/dev/null
-    timer 10
-  else
-    timec=$((timec++))
     printf "\x1b[1mTake a 5 minute break now. You did a good job.\x1b[0m\n"
     notify-send "Take a 5 minute break"
     rfkill unblock wlan
     setsid mpv ~/.cache/celebrate.wav 1&>/dev/null
     timer 5
+  else
+    timec=$((timec++))
+    printf "\x1b[1mTake a 5 minute break now. You did a good job.\x1b[0m\n"
+    notify-send "Take a 2 minute break"
+    rfkill unblock wlan
+    setsid mpv ~/.cache/celebrate.wav 1&>/dev/null
+    timer 2
   fi 
 done

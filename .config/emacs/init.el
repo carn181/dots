@@ -3,16 +3,22 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; Backup Management
+(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups/"))))
+
 ;; Transparency
 (set-frame-parameter (selected-frame) 'alpha '(90 100))
 (add-to-list 'default-frame-alist '(alpha 90 100))
 
+;; Correct Resizing
+(setq frame-resize-pixelwise t)
+
 ;; Scrolling
 (setq redisplay-dont-pause t
-  scroll-margin 1
-  scroll-step 1
-  scroll-conservatively 10000
-  scroll-preserve-screen-position 1)
+      scroll-margin 1
+      scroll-step 1
+      scroll-conservatively 10000
+      scroll-preserve-screen-position 1)
 
 ;; y-n
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -25,15 +31,15 @@
       `((".*" "~/.local/share/emacs_saves/" t)))
 
 ;; Whitespace
-(add-hook 'prog-mode-hook #'whitespace-mode)
-(setq whitespace-style `(face spaces tabs newline space-mark tab-mark newline-mark ))
-(setq whitespace-display-mappings
-      ;; all numbers are unicode codepoint in decimal. e.g. (insert-char 182 1)
-      '(
-        (space-mark 32 [183] [46]) ; SPACE 32 「 」, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
-        (newline-mark nil nil nil) ; LINE FEED,
-        (tab-mark 9 [9655 9] [92 9]) ; tab
-        ))
+;; (add-hook 'prog-mode-hook #'whitespace-mode)
+;; (setq whitespace-style `(face spaces tabs newline space-mark tab-mark newline-mark ))
+;; (setq whitespace-display-mappings
+;;       ;; all numbers are unicode codepoint in decimal. e.g. (insert-char 182 1)
+;;       '(
+;;         (space-mark 32 [183] [46]) ; SPACE 32 「 」, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
+;;         (newline-mark nil nil nil) ; LINE FEED,
+;;         (tab-mark 9 [9655 9] [92 9]) ; tab
+;;         ))
 
 ;; No tabs
 (setq-default indent-tabs-mode nil)
@@ -42,13 +48,14 @@
 (global-hl-line-mode 1)
 
 ;; Font
-(set-face-attribute 'default nil :font "Go Mono Nerd Font Mono" :height 110)
+(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font Mono" :height 110)
 
 ;; Custom emacs directory
 (setq user-emacs-directory (concat (getenv "HOME") "/.config/emacs/"))
 
 ;; STOP CLUTTERING init.el EMACS !
-(setq custom-file (concat user-emacs-directory "/custom.el"))
+(setq custom-file (concat user-emacs-directory "custom.el"))
+(load custom-file)
 
 ;; Packages
 (require 'package)
@@ -59,6 +66,7 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
+
 ;; use-package
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
@@ -68,6 +76,50 @@
 ;; Quelpa
 (use-package quelpa)
 (use-package quelpa-use-package)
+
+;; Org Agenda settings
+(use-package org
+  :ensure nil
+  :config
+  (setq org-agenda-files (list "~/ext/Media/Docs/org/todo.org")
+        org-todo-keywords '((sequence "TODO(t)" "ACTIVE(a)" "DONE(d)"))
+        org-agenda-custom-commands
+        '(("j" "Jobs" tags "jobs"
+           ((org-agenda-overriding-header "Jobs to do")))
+          ("b" "Books" tags "books"
+           ((org-agenda-overriding-header "Books to read")
+            (org-agenda-remove-tags t)
+            (org-agenda-compact-blocks t)
+            (ps-landscape-mode t)
+            (org-agenda-prefix-format " -> ")
+            (ps-number-of-columns 2))))))
+
+;; Org-Roam basic configuration
+(setq org-directory (concat (getenv "HOME") "/ext/Media/Docs/org/"))
+
+(use-package org-roam
+  :after org
+    :init (setq org-roam-v2-ack t) ;; Acknowledge V2 upgrade
+    :custom
+    (org-roam-directory (file-truename org-directory))
+    :config
+    (org-roam-setup)
+    :bind (("C-c n f" . org-roam-node-find)
+           ("C-c n g" . org-roam-graph)
+           ("C-c n r" . org-roam-node-random)		    
+           (:map org-mode-map
+                 (("C-c n i" . org-roam-node-insert)
+                  ("C-c n o" . org-id-get-create)
+                  ("C-c n t" . org-roam-tag-add)
+                  ("C-c n a" . org-roam-alias-add)
+                  ("C-c n l" . org-roam-buffer-toggle)))))
+
+;; Org Bullets
+(use-package org-bullets
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+(find-file "~/.config/emacs/elfeed.org")
 
 ;; Redo
 (use-package undo-tree
@@ -85,15 +137,26 @@
   :bind (("C-s" . swiper)))
 
 ;; Theme
-(use-package gruvbox-theme
+(use-package color-theme-sanityinc-tomorrow
   :init
-  (load-theme 'gruvbox-dark-hard))
+  (load-theme 'sanityinc-tomorrow-bright))
 
 ;; Modeline, first all-the-icons
 (use-package all-the-icons)
 
 ;; Elfeed
-(use-package elfeed)
+(use-package elfeed
+  :custom (elfeed-db-directory "~/.local/share/elfeed/")
+  :bind ((:map elfeed-show-mode-map
+               ("M" . browse-url-mpv-open)))
+  :config
+  (defun browse-url-mpv-open (url &optional ignored)
+    "Pass the specified URL to the \"mpv\" command.
+xdg-open is a desktop utility that calls your preferred web browser.
+The optional argument IGNORED is not used."
+    (interactive (browse-url-interactive-arg "URL: "))
+    (call-process "mpv" nil 0 nil url)))
+
 (use-package elfeed-org
   :init (elfeed-org)
   :custom (rmh-elfeed-org-files (list "~/.config/emacs/elfeed.org")))
@@ -185,44 +248,8 @@
         dashboard-set-heading-icons t
         dashboard-startup-banner (concat user-emacs-directory "start.png")))
 
- ;; PDF
-(use-package pdf-tools
-  :mode ("\\.pdf\\'" . pdf-view-mode)
-  :bind (:map pdf-view-mode-map
-              ("C-s" . isearch-forward)
-               ("C-r" . isearch-backward))
-  :config
-  (add-hook 'pdf-view-mode-hook 'pdf-isearch-minor-mode)
-  (add-hook 'pdf-view-mode-hook 'pdf-view-midnight-minor-mode))
-
-;; EPUB
-(use-package nov
-  :mode ("\\.epub\\'" . nov-mode))
-
 ;; Magit
 (use-package  magit)
-
-;; Org Bullets
-(use-package org-bullets
-  :config
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-
-;; Org Agenda settings
-(use-package org
-  :ensure nil
-  :config
-  (setq org-agenda-files (list "~/ext/Media/Docs/org/todo.org")
-        org-todo-keywords '((sequence "TODO(t)" "ACTIVE(a)" "DONE(d)"))
-        org-agenda-custom-commands
-        '(("j" "Jobs" tags "jobs"
-           ((org-agenda-overriding-header "Jobs to do")))
-          ("b" "Books" tags "books"
-           ((org-agenda-overriding-header "Books to read")
-            (org-agenda-remove-tags t)
-            (org-agenda-compact-blocks t)
-            (ps-landscape-mode t)
-            (org-agenda-prefix-format " -> ")
-            (ps-number-of-columns 2))))))
 
 ;; Ibuffer
 (use-package ibuffer
@@ -253,9 +280,10 @@
   :ensure nil
   :config
   (setq mu4e-change-filenames-when-moving t
+        shr-color-visible-luminance-min 80
         mu4e-update-interval (* 10 60)
-        mu4e-get-mail-command "mbsync -a"
-        mu4e-maildir         "~/.mail"
+        mu4e-get-mail-command "mbsync -a -c \"$XDG_CONFIG_HOME\"/isync/mbsyncrc"
+        mu4e-maildir         "~/.local/share/mail"
         mu4e-drafts-folder   "/Drafts"
         mu4e-sent-folder     "/Sent Mail"
         mu4e-trash-folder    "/Trash"

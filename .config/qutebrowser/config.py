@@ -1,13 +1,11 @@
 config.load_autoconfig()
-c.url.searchengines = {"DEFAULT": "https://searx.tuxcloud.net/?q={}", 
-                       "wa": "https://wiki.archlinux.org/?search={}", 
+c.url.searchengines = {"DEFAULT": "https://anon.sx/?q={}", 
                        "aur":"https://aur.archlinux.org/packages/?O=0&K={}", 
                        "4":  "https://4chan.org/{}", 
-                      "yt": "https://au.ytprivate.com/search?q={}",
-#                       "yt": "https://youtube.com/results?search_query={}",
-                       "r":  "https://reddit.com/r/{}",
-                       "pb": "https://pirateproxy.surf/search.php?q={}",
-                       "gh": "https://github.com/{}",
+                       "yt": "https://yewtu.be/search?q={}",
+                       "i":  "https://pajeet.top/{}",
+                       "n":  "https://nitter.net/{}",
+                       "r":  "https://libreddit.bcow.xyz/r/{}",
                        "gl": "https://gitlab.com/{}"}
 c.url.start_pages = "https://searx.tuxcloud.net"
 
@@ -19,11 +17,11 @@ c.content.blocking.adblock.lists = [
         "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/legacy.txt",
         "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt"]
 
-c.colors.webpage.prefers_color_scheme_dark = True
-c.colors.webpage.darkmode.enabled = True
-c.colors.webpage.darkmode.policy.images = "never"
+#c.colors.webpage.prefers_color_scheme_dark = True
+#c.colors.webpage.darkmode.enabled = True
+#c.colors.webpage.darkmode.policy.images = "never"
 
-c.url.default_page = "https://searx.tuxcloud.net/"
+c.url.default_page = "https://anon.sx/"
 config.source("gruvbox.py")
 # Bindings for cycling through CSS stylesheets from Solarized Everything CSS:
 # https://github.com/alphapapa/solarized-everything-css
@@ -33,6 +31,6 @@ config.bind(',gr', 'config-cycle content.user_stylesheets ~/.config/qutebrowser/
 config.bind(',sd', 'config-cycle content.user_stylesheets ~/.config/qutebrowser/solarized-everything-css/css/solarized-dark/solarized-dark-all-sites.css ""')
 config.bind(',sl', 'config-cycle content.user_stylesheets ~/.config/qutebrowser/solarized-everything-css/css/solarized-light/solarized-light-all-sites.css ""')
 
-config.bind(';m', 'set downloads.location.directory /mnt/ext/Media/Pix/memes/ ;; hint links download')
+config.bind(';m', 'set downloads.location.directory ~/ext/Media/meems/ ;; hint links download')
 config.bind(',g', 'spawn --userscript greentext')
 config.bind(',m', 'hint links spawn mpv {hint-url}')
