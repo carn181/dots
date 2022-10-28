@@ -1,5 +1,5 @@
 #!/bin/sh
-xrdb ~/.local/share/xresources/tomorrow-night &
+wal -i ~/ext/Media/Pix/wallpapers/arizona-trail.jpg &
 xset r rate 300 50 &
 slstatus &
 xbanish &
@@ -7,8 +7,17 @@ pidof dunst || dunst &
 xsetroot -cursor_name left_ptr &
 setxkbmap -layout us -option ctrl:nocaps &
 #xsetroot -solid "#1d2021" &
-xwallpaper --zoom ~/ext/Media/Pix/wallpapers/gondola.png &
+xwallpaper --zoom ~/ext/Media/Pix/wallpapers/arizona-trail.jpg &
 pidof mpd || mpd &
 redshift &
-jackd -d alsa &
-pulseaudio -D &
+synclient TapButton1=1 TapButton2=3 TapButton3=2
+# JACK
+
+#jackd -d alsa &
+
+# PIPEWIRE
+pipewire &
+pipewire-pulse &
+
+# PULSEAUDIO
+#pulseaudio -D &

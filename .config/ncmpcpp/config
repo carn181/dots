@@ -507,4 +507,3 @@ use_console_editor = yes
 ## Note: due to technical limitations of older ncurses version, if 256 colors
 ## are used there is a possibility that you'll be able to use only colors with
 ## transparent background.
-#

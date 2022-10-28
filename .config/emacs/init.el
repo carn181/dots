@@ -47,8 +47,11 @@
 ;; Global HL Line
 (global-hl-line-mode 1)
 
+;; Word Wrapping
+(global-visual-line-mode 1)
+
 ;; Font
-(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font Mono" :height 110)
+(set-face-attribute 'default nil :font "Go Mono" :height 105)
 
 ;; Custom emacs directory
 (setq user-emacs-directory (concat (getenv "HOME") "/.config/emacs/"))
@@ -77,6 +80,10 @@
 (use-package quelpa)
 (use-package quelpa-use-package)
 
+;; Emojis
+(use-package emojify
+  :hook (after-init . global-emojify-mode))
+
 ;; Org Agenda settings
 (use-package org
   :ensure nil
@@ -99,20 +106,31 @@
 
 (use-package org-roam
   :after org
-    :init (setq org-roam-v2-ack t) ;; Acknowledge V2 upgrade
-    :custom
-    (org-roam-directory (file-truename org-directory))
-    :config
-    (org-roam-setup)
-    :bind (("C-c n f" . org-roam-node-find)
-           ("C-c n g" . org-roam-graph)
-           ("C-c n r" . org-roam-node-random)		    
-           (:map org-mode-map
-                 (("C-c n i" . org-roam-node-insert)
-                  ("C-c n o" . org-id-get-create)
-                  ("C-c n t" . org-roam-tag-add)
-                  ("C-c n a" . org-roam-alias-add)
-                  ("C-c n l" . org-roam-buffer-toggle)))))
+  :init
+  (setq org-roam-v2-ack t) ;; Acknowledge V2 upgrade
+  (add-to-list 'load-path "~/.config/emacs/elpa/org-roam-ui-20220104.1733")
+  (load-library "org-roam-ui")
+  :custom
+  (org-roam-directory (file-truename org-directory))
+  (org-roam-dailies-directory "daily/")
+  (org-roam-capture-templates
+   '(("d" "default" plain "%?" :target
+      (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+      :unnarrowed t)))
+  ;;       ("b" "book" plain "#+author: "
+  ;;        :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n"))))
+  :config
+  (org-roam-setup)
+  :bind (("C-c n f" . org-roam-node-find)
+         ("C-c n g" . org-roam-graph)
+         ("C-c n r" . org-roam-node-random)
+         ("C-c n d" . org-roam-dailies-capture-today)
+         (:map org-mode-map
+               (("C-c n i" . org-roam-node-insert)
+                ("C-c n o" . org-id-get-create)
+                ("C-c n t" . org-roam-tag-add)
+                ("C-c n a" . org-roam-alias-add)
+                ("C-c n l" . org-roam-buffer-toggle)))))
 
 ;; Org Bullets
 (use-package org-bullets
@@ -137,9 +155,10 @@
   :bind (("C-s" . swiper)))
 
 ;; Theme
-(use-package color-theme-sanityinc-tomorrow
+
+(use-package ewal-doom-themes
   :init
-  (load-theme 'sanityinc-tomorrow-bright))
+  (load-theme 'ewal-doom-vibrant))
 
 ;; Modeline, first all-the-icons
 (use-package all-the-icons)
@@ -148,7 +167,8 @@
 (use-package elfeed
   :custom (elfeed-db-directory "~/.local/share/elfeed/")
   :bind ((:map elfeed-show-mode-map
-               ("M" . browse-url-mpv-open)))
+               ("M" . browse-url-mpv-open)
+               ("C" . writeroom-mode)))
   :config
   (defun browse-url-mpv-open (url &optional ignored)
     "Pass the specified URL to the \"mpv\" command.
@@ -282,13 +302,12 @@ The optional argument IGNORED is not used."
   (setq mu4e-change-filenames-when-moving t
         shr-color-visible-luminance-min 80
         mu4e-update-interval (* 10 60)
-        mu4e-get-mail-command "mbsync -a -c \"$XDG_CONFIG_HOME\"/isync/mbsyncrc"
-        mu4e-maildir         "~/.local/share/mail"
+        mu4e-get-mail-command "mbsync -a -c ~/.config/isync/mbsyncrc"
         mu4e-drafts-folder   "/Drafts"
         mu4e-sent-folder     "/Sent Mail"
         mu4e-trash-folder    "/Trash"
         mu4e-maildir-shortcuts
-        '(("/inbox" . ?i)
+        '(("/Inbox" . ?i)
           ("/Drafts" . ?d)
           ("/Trash" . ?t)
           ("/Junk" . ?j)

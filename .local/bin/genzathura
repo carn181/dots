@@ -3,9 +3,9 @@
 # Generates zathura configuration file
 
 background=#000000
-foreground=#eaeaea
-color1=#d54e53
-color2=#e78c45
+foreground=#ffffff
+color1=#ef8b50
+color2=#d0bc00
 cat <<CONF
 set recolor "true"
 set completion-bg "$background"

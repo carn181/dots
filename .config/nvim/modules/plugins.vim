@@ -4,7 +4,8 @@ Plug 'dense-analysis/ale'
 Plug 'vlime/vlime'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tjdevries/colorbuddy.nvim'
-Plug 'ishan9299/modus-theme-vim', {'branch': 'stable'} 
+Plug 'ishan9299/modus-theme-vim', {'branch': 'stable'}
+Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
 Plug 'RRethy/vim-hexokinase'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'junegunn/fzf'

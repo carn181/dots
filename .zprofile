@@ -12,7 +12,7 @@ export READER="zathura"
 export VISUAL="emacsclient -c"
 export VIDEO="mpv"
 export IMAGE="sxiv"
-export NNN_BMS='w:~/ext/dwn/;p:~/ext/Media/Pix/;d:~/ext/Media/Docs;v:~/ext/Media/Vids;b:~/ext/Media/Books;s:~/ext/School/'
+export NNN_BMS='w:~/ext/dwn/;p:~/ext/Media/Pix/;M:~/ext/Media/Music;d:~/ext/Media/Docs;v:~/ext/Media/Vids;b:~/ext/Media/Books;m:~/ext/Media/Docs/meems/;g:~/ext/Media/Games/;s:~/ext/ludum/'
 LS_COLORS='no=00;37:fi=00:di=00;33:ln=04;36:pi=40;33:so=01;35:bd=40;33;01:'
 export LS_COLORS;
 export MPD_HOST="::1"

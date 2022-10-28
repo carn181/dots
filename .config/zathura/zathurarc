@@ -1,29 +1,77 @@
-set recolor "true"
-set completion-bg "#000000"
-set completion-fg "#eaeaea"
-set completion-group-bg "#000000"
-set completion-group-fg "#e78c45"
-set completion-highlight-bg "#eaeaea"
-set completion-highlight-fg "#000000"
-set recolor-lightcolor "#000000"
-set recolor-darkcolor "#eaeaea"
-set default-bg "#000000"
-set inputbar-bg "#000000"
-set inputbar-fg "#eaeaea"
-set notification-bg "#000000"
-set notification-fg "#eaeaea"
-set notification-error-bg "#d54e53"
-set notification-error-fg "#eaeaea"
-set notification-warning-bg "#d54e53"
-set notification-warning-fg "#eaeaea"
-set statusbar-bg "#000000"
-set statusbar-fg "#eaeaea"
-set index-bg "#000000"
-set index-fg "#eaeaea"
-set index-active-bg "#eaeaea"
-set index-active-fg "#000000"
-set render-loading-bg "#000000"
-set render-loading-fg "#eaeaea"
+### Settings from original zathurarc ###
 set window-title-home-tilde true
 set statusbar-basename true
 set selection-clipboard clipboard
+
+### zathura-pywal ###
+# Allow recolor
+set recolor 'true'
+
+# Don't allow original hue when recoloring
+set recolor-keephue 'false'
+
+# Don't keep original image colors while recoloring
+set recolor-reverse-video 'false'
+
+# Command line completion entries
+set completion-fg '#c9bca9'
+set completion-bg '#131812'
+
+# Command line completion group elements
+set completion-group-fg '#6F6B55'
+set completion-group-bg '#131812'
+
+# Current command line completion element
+set completion-highlight-fg '#131812'
+set completion-highlight-bg '#c9bca9'
+
+# Default foreground/background color
+set default-bg rgba(19,24,18,0.8)
+
+# Input bar
+set inputbar-fg '#c9bca9'
+set inputbar-bg '#131812'
+
+# Notification
+set notification-fg '#c9bca9'
+set notification-bg '#131812'
+
+# Error notification
+set notification-error-fg '#c9bca9'
+set notification-error-bg '#5E6851'
+
+# Warning notification
+set notification-warning-fg '#c9bca9'
+set notification-warning-bg '#5E6851'
+
+# Tab - TODO
+# set tabbar-fg
+# set tabbar-bg
+
+# Focused tab - TODO
+# set tabbar-focus-fg
+# set tabbar-focus-bg
+
+# Status bar
+set statusbar-fg '#c9bca9'
+set statusbar-bg '#131812'
+
+# Highlighting parts of the document (e.g. show search results)
+set highlight-color '#6F6B55'
+set highlight-active-color '#6F6B55'
+
+# Represent light/dark colors in recoloring mode
+set recolor-lightcolor rgba(0,0,0,0)
+set recolor-darkcolor '#c9bca9'
+
+# 'Loading...' text
+set render-loading-fg '#c9bca9'
+set render-loading-bg '#131812'
+
+# Index mode
+set index-fg '#c9bca9'
+set index-bg '#131812'
+
+# Selected element in index mode
+set index-active-fg '#131812'
+set index-active-bg '#c9bca9'
